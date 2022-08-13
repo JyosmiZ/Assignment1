@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter (val context: Context, val userList: List<MyDataItem>) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+    var listener: OnItemClickInteractionListener? = null
 
        inner class ViewHolder (itemView:View) : RecyclerView.ViewHolder (itemView) {
             var userId: TextView
@@ -21,17 +22,20 @@ class MyAdapter (val context: Context, val userList: List<MyDataItem>) : Recycle
                 title = itemView.findViewById(R.id.userDesc)
 
                 itemView.setOnClickListener{
-                    val position: Int = adapterPosition
-                    val intent= Intent(itemView.context, RepoDetails::class.java)
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    intent.putExtra("REPO_DATA",myDataItem)
-                    context.startActivity(intent)
+//                    val position: Int = adapterPosition
+//                    val intent= Intent(itemView.context, RepoDetails::class.java) //creating intent ... it willl open repodetails class
+//                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                    intent.putExtra(Constants.KEY_INTENT_DATA, myDataItem) // pasisng the data in the intent view (mydataitem)
+//                    context.startActivity(intent) //trigerring to strat the intent
                 }
             }
             fun bindView(myDataItem: MyDataItem){
                 this.myDataItem = myDataItem
                 userId.text= myDataItem.name
                 title.text = myDataItem.description
+                itemView.setOnClickListener {
+                    listener?.onItemClick(myDataItem)
+                }
             }
         }
 
@@ -47,4 +51,7 @@ class MyAdapter (val context: Context, val userList: List<MyDataItem>) : Recycle
     override fun getItemCount(): Int {
         return userList.size
     }
+}
+interface OnItemClickInteractionListener{ //Interface created
+    fun onItemClick(myDataItem: MyDataItem) //method created
 }

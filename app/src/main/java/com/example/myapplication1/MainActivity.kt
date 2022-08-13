@@ -1,5 +1,6 @@
 package com.example.myapplication1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
@@ -14,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 const val BASE_URL = "https://api.github.com/orgs/fossasia/"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),OnItemClickInteractionListener {
 
     lateinit var myAdapter: MyAdapter
     lateinit var linearLayout: LinearLayout
@@ -46,6 +47,7 @@ class MainActivity : AppCompatActivity() {
                 val responseBody = response?.body() !!
                 myAdapter = MyAdapter(baseContext, responseBody)
                 findViewById<RecyclerView>(R.id.recyclerview).adapter = myAdapter
+                myAdapter.listener = this@MainActivity // initialize listener
                // myAdapter.notifyDataSetChanged()
 
             }
@@ -72,5 +74,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
     )
+    }
+
+    override fun onItemClick(myDataItem : MyDataItem) { //current activity to target activity
+        val intent= Intent(this, RepoDetails::class.java) //creating intent ... it will open repodetails class // this ... is main activity
+        intent.putExtra(Constants.KEY_INTENT_DATA,myDataItem) // pasisng the data in the intent view (mydataitem)
+        this.startActivity(intent) //trigerring to strat the intent
     }
 }
