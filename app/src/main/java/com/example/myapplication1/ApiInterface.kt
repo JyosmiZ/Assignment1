@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 
 interface ApiInterface {
-    @GET("repos")
+    @GET("orgs/fossasia/repos")
     fun getData() : Call<List<MyDataItem>>
 }

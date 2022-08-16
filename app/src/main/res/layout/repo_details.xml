@@ -4,6 +4,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -11,8 +14,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
         android:text="Hello World 1"
+        android:textStyle="bold"
+        android:textSize="25dp"
         />
 
     <TextView
@@ -21,9 +26,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:text="Hello World 2"
+        android:textStyle="normal"
+        android:textSize="15dp"
         />
 
     <TextView
@@ -33,18 +42,139 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/msg1"
-        app:layout_constraintBottom_toTopOf="@id/title"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:text="Hello World 3"
+        android:textStyle="normal"
+        android:textSize="15dp"
         />
 
     <TextView
         android:id="@+id/msg3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World 4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintBottom_toBottomOf="@id/msg2"/>
+        app:layout_constraintTop_toBottomOf="@id/msg2"
+        android:layout_marginTop="30dp"
+        app:layout_goneMarginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Hello World 4"
+        android:textStyle="normal"
+        android:textSize="15dp"
+        />
 
+    <TextView
+        android:id="@+id/msg4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/msg3"
+        android:layout_marginTop="30dp"
+        app:layout_goneMarginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Hello World 5"
+        android:textStyle="normal"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:id="@+id/msg5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/msg4"
+        android:layout_marginTop="30dp"
+        app:layout_goneMarginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Hello World 6"
+        android:textStyle="normal"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:id="@+id/msg6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/msg5"
+        android:layout_marginTop="30dp"
+        app:layout_goneMarginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Hello World 7"
+        android:textStyle="normal"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:id="@+id/msg7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/msg6"
+        android:layout_marginTop="30dp"
+        app:layout_goneMarginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Hello World 8"
+        android:textStyle="normal"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:id="@+id/msg8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/msg7"
+        android:layout_marginTop="30dp"
+        app:layout_goneMarginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Hello World 9"
+        android:textStyle="normal"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:id="@+id/msg9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/msg8"
+        android:layout_marginTop="30dp"
+        app:layout_goneMarginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Hello World 10"
+        android:textStyle="normal"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:id="@+id/msg10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/msg9"
+        android:layout_marginTop="30dp"
+        app:layout_goneMarginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Hello World 11"
+        android:textStyle="normal"
+        android:textSize="15dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

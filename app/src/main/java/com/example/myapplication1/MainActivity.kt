@@ -13,7 +13,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val BASE_URL = "https://api.github.com/orgs/fossasia/"
+const val BASE_URL = "https://api.github.com"
 
 class MainActivity : AppCompatActivity(),OnItemClickInteractionListener {
 
@@ -79,6 +79,6 @@ class MainActivity : AppCompatActivity(),OnItemClickInteractionListener {
     override fun onItemClick(myDataItem : MyDataItem) { //current activity to target activity
         val intent= Intent(this, RepoDetails::class.java) //creating intent ... it will open repodetails class // this ... is main activity
         intent.putExtra(Constants.KEY_INTENT_DATA,myDataItem) // pasisng the data in the intent view (mydataitem)
-        this.startActivity(intent) //trigerring to strat the intent
+        this.startActivity(intent) //trigerring to start the intent
     }
 }

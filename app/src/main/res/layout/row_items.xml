@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardElevation="8dp"
-    android:layout_margin="8dp">
+    app:cardCornerRadius="3dp"
+    android:layout_margin="8dp"
+    android:layout_marginVertical="5dp"
+    android:background="?android:attr/selectableItemBackground"
+    >
 
         <LinearLayout
             android:orientation="vertical"
@@ -16,6 +20,13 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+                        
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/image"
+                        android:elevation="10dp"
+                        android:layout_margin="5dp" />
 
         <LinearLayout
           android:orientation="vertical"
@@ -31,7 +42,8 @@
                 android:textSize="20sp"
                 android:text="UserID"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"/>
 
             <TextView
                 android:id="@+id/userDesc"
@@ -39,7 +51,9 @@
                 android:textStyle="normal"
                 android:text="Desc"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"/>
 
 
         </LinearLayout>

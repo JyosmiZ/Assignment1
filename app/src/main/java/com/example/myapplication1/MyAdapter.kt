@@ -5,9 +5,11 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class MyAdapter (val context: Context, val userList: List<MyDataItem>) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
     var listener: OnItemClickInteractionListener? = null
@@ -15,24 +17,21 @@ class MyAdapter (val context: Context, val userList: List<MyDataItem>) : Recycle
        inner class ViewHolder (itemView:View) : RecyclerView.ViewHolder (itemView) {
             var userId: TextView
             var title : TextView
+            var img : ImageView
             var myDataItem : MyDataItem?= null
 
             init {
                 userId = itemView.findViewById(R.id.userId)
                 title = itemView.findViewById(R.id.userDesc)
+                img = itemView.findViewById(R.id.image)
 
-                itemView.setOnClickListener{
-//                    val position: Int = adapterPosition
-//                    val intent= Intent(itemView.context, RepoDetails::class.java) //creating intent ... it willl open repodetails class
-//                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-//                    intent.putExtra(Constants.KEY_INTENT_DATA, myDataItem) // pasisng the data in the intent view (mydataitem)
-//                    context.startActivity(intent) //trigerring to strat the intent
-                }
             }
             fun bindView(myDataItem: MyDataItem){
                 this.myDataItem = myDataItem
                 userId.text= myDataItem.name
                 title.text = myDataItem.description
+
+                Glide.with(context).load(myDataItem.owner?.avatar_url).into(img)
                 itemView.setOnClickListener {
                     listener?.onItemClick(myDataItem)
                 }
@@ -53,5 +52,5 @@ class MyAdapter (val context: Context, val userList: List<MyDataItem>) : Recycle
     }
 }
 interface OnItemClickInteractionListener{ //Interface created
-    fun onItemClick(myDataItem: MyDataItem) //method created
+    fun onItemClick(myDataItem: MyDataItem) //method created≤
 }
